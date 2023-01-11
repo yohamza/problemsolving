@@ -7,16 +7,13 @@ function longestSubStringCount(s) {
   let subStringCount = 0;
 
   while (p2 < s.length) {
-    if (map[s[p2]] > 0) {
-      map.delete(s[p2]);
-      map[(s[p1], p1)];
-      map[(s[p2], p2)];
+    if (!map.has(s[p2])) {
+      map.set(s[p2], p2);
       subStringCount = Math.max(subStringCount, p2 - p1 + 1);
       p2++;
     } else {
-      map[s[p2]] = p2;
+      map.delete(s[p1]);
       p1++;
-      p2++;
     }
   }
 
